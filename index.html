@@ -31,62 +31,8 @@
   <!-- Scrollbar CSS -->
   <link rel="stylesheet" type="text/css" href="modules/global/Scrollbar.css">
 
-<style>
-
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
-.fullheight{
-  height: 100% !important;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-.add-border{
-  border: 2px solid grey !important;
-  border-radius: 2px !important;
-}
-
-.menu{
-  width: 100%;
-  max-height: 100vh;
-}
-
-.menu-content{
-  overflow: auto;
-  max-height: 90vh;
-}
-
-.iframe-container {
-  overflow: auto;
-  /* // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625) */
-  padding-top: 56.25%;
-  position: relative;
-}
-
-.iframe-container iframe {
-   border: 0;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;
-}
-
-.box {
-  padding: 0.05rem !important;
-  margin: 0rem !important;
-  /* box-shadow: 0 0.5em 1em -0.125em rgba(255, 120, 78, 0.1), 0 0px 0 1px rgba(255, 120, 78, 0.22) !important; */
-}
-
-.overlay-menu{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-</style>
+  <!--  -->
+  <link rel="stylesheet" type="text/css" href="scripts/custom.css">
 
   <!-- bulma css and script-->
   <link rel="stylesheet" href="modules/bulma/css/bulma.min.css">
@@ -94,88 +40,38 @@ body {
 </head>
 
 <body>
+  <div id="NavLand" class="">
+    <nav-bar></nav-bar>
+  </div>
   <div class="columns is-gapless fullheight">
-    <div id="Menubar" class="column is-one-fifth">
+    <div id="Menubar" class="column is-hidden is-one-fifth">
       <aside class="menu add-border">
         <div>
-          <nav class="navbar has-background-grey" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <button class="button is-medium is-text" onclick="SidebarToggle(false)">
-                <span class=""><i class="fas fa-bars"></i></span>
-              </button>
-              <a class="navbar-item is-white" href="">
-                <img src="images/logo_map.svg">
-              </a>
-            </div>
-            <div id="navMenu" class="navbar-menu">
-              <div class="navbar-start">
-                  <h3 class="navbar-item is-white has-text-black"><b>Tooling</b></h3>
-              </div>
-            </div>
-          </nav>
+          <div id="NavBar">
+            <nav-bar></nav-bar>
+          </div>
           <div id="Menulist" class="menu-content scrollbar-warning">
             <ul class="menu-list">
               <tool-frame v-for="tool in toolList" v-bind:tool="tool" v-bind:key="tool.id"></tool-frame>
-              <!-- <li>
-                <a href="https://rsbg.maptm.nl" target="toolframe" onclick="SidebarToggle(true)">
-                <div class="add-border box" >
-                  <figure class="image is-16by9">
-                      <image src="Images/rsbgimg.png" alt="RSBG Tool">
-                  </figure>
-                  <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless">RSBG tool</button>
-                </div>
-              </a>
-              </li>
-              <li>
-                <a href="https://nu.nl" target="toolframe" onclick="SidebarToggle(true)">
-                  <div class="add-border box" >
-                    <figure class="image is-16by9">
-                        <image src="Images/nulogo.jpg" alt="Nu.nl is hier">
-                    </figure>
-                    <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless">Nu.nl is hier</button>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="https://maptm.nl" target="toolframe" onclick="SidebarToggle(true)">
-                  <div class="add-border box" >
-                    <figure class="image is-16by9">
-                        <image src="Images/maptm.png" alt="MAPTM site">
-                    </figure>
-                    <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless">MAPTM site</button>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="https://services.maptm.nl/insight" target="toolframe" onclick="SidebarToggle(true)">
-                  <div class="add-border box" >
-                    <figure class="image is-16by9">
-                        <image src="Images/insight.png" alt="Services.maptm">
-                    </figure>
-                    <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless">Services.maptm/insight</button>
-                  </div>
-                </a>
-              </li> -->
             </ul>
           </div>
         </div>
       </aside>
     </div>
-    <div class="column" id="IframeColumn">
+    <div class="column is-hidden" id="IframeColumn">
       <div class="iframe-container">
-        <title>
-          Dit is de Tool:
-        </title>
         <iframe src="https://maptm.nl" name="toolframe" allowfullscreen>
         </iframe>
       </div>
     </div>
-    <div class="column is-hidden" id="LandingPage">
+    <div class="column is-fullwidth" id="LandingPage">
+      <div id="LandingList" class="columns is-multiline light-padding is-fullwidth scrollbar-warning">
+        <landing-frame v-for="tool in toolList" v-bind:tool="tool" v-bind:key="tool.id"></landing-frame>
+      </div>
     </div>
   </div>
 
 </body>
 <!-- Here we run post-html scripts -->
 <script src="modules/global/vue.js"></script>
-
 <script src="scripts/Sidebar.js"></script>
