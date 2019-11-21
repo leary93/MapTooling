@@ -4,7 +4,7 @@ var toolList = [
   {id: 2, link: 'https://timapp-demo.maptm.nl', image: 'Images/TIMapp.png', name: 'https://timapp-demo.maptm.nl', text: 'TIMapp'},
   {id: 3, link: 'https://services.maptm.nl/UtrechtHB/', image: 'Images/UtrechtHB.png', name: 'https://services.maptm.nl/UtrechtHB/', text: 'Utrecht HB tool'},
   {id: 4, link: 'https://comol5.maptm.nl/modules/login/login.html', image: 'Images/comol5.jpg', name: 'https://comol5.maptm.nl/modules/login/login.html', text: 'COMOL5'},
-  {id: 5, link: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', image: 'Images/kiemenspeurder.png', name: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', text: 'Kiemenspeurder'},
+  {id: 5, link: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', image: 'Images/Kiemenspeurder.png', name: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', text: 'Kiemenspeurder'},
   {id: 6, link: 'https://demo.maptm.nl/AIS-Explorer/', image: 'Images/AISexplorer.png', name: 'https://demo.maptm.nl/AIS-Explorer/', text: 'AIS explorer'},
   {id: 7, link: 'https://services.maptm.nl/BM-AMS/', image: 'Images/BM-amsterdam.png', name: 'https://services.maptm.nl/BM-AMS/', text: 'Bereikbaarheidsmeter Amsterdam'},
   {id: 8, link: 'https://socrates.antwerp.maptm.nl/index.html', image: 'Images/STSAntwerpen.png', name: 'https://socrates.antwerp.maptm.nl/index.html', text: 'Socrates Antwerpen'},
@@ -51,7 +51,7 @@ Vue.component("nav-bar", {
         <span class=""><i class="fas fa-bars"></i></span>
       </button>
       <a class="navbar-item is-white light-padding" href="">
-        <img src="images/logo_map.svg">
+        <img src="Images/logo_map.svg">
       </a>
     </div>
     <div name="navMenu" class="navbar-menu">
