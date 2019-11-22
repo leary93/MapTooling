@@ -64,8 +64,8 @@
         </iframe>
       </div>
     </div>
-    <div class="column is-fullwidth" id="LandingPage">
-      <div id="LandingList" class="columns is-multiline light-padding is-fullwidth scrollbar-warning">
+    <div class="column is-fullwidth scrollbar-warning fullheight maxheight" id="LandingPage">
+      <div id="LandingList" class="columns is-multiline light-padding is-fullwidth ">
         <landing-frame v-for="tool in toolList" v-bind:tool="tool" v-bind:key="tool.id"></landing-frame>
       </div>
     </div>

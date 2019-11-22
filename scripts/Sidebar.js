@@ -1,7 +1,7 @@
 var toolList = [
   {id: 0, link: 'https://tv.maptm.nl/', image: 'Images/trafficviewer.png', name: 'https://tv.maptm.nl/', text: 'MAPtm traffic viewer'},
   {id: 1, link: 'https://timviewer-demo.maptm.nl', image: 'Images/TIMviewer.png', name: 'https://timviewer-demo.maptm.nl', text: 'TIMviewer'},
-  {id: 2, link: 'https://timapp-demo.maptm.nl', image: 'Images/TIMapp.png', name: 'https://timapp-demo.maptm.nl', text: 'TIMapp'},
+  // {id: 2, link: 'https://timapp-demo.maptm.nl', image: 'Images/TIMapp.png', name: 'https://timapp-demo.maptm.nl', text: 'TIMapp'},
   {id: 3, link: 'https://services.maptm.nl/UtrechtHB/', image: 'Images/UtrechtHB.png', name: 'https://services.maptm.nl/UtrechtHB/', text: 'Utrecht HB tool'},
   {id: 4, link: 'https://comol5.maptm.nl/modules/login/login.html', image: 'Images/comol5.jpg', name: 'https://comol5.maptm.nl/modules/login/login.html', text: 'COMOL5'},
   {id: 5, link: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', image: 'Images/Kiemenspeurder.png', name: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', text: 'Kiemenspeurder'},
@@ -30,7 +30,7 @@ Vue.component('tool-frame',{
 Vue.component('landing-frame',{
   props: ['tool'],
   template:`
-    <div class="column is-one-fifth">
+    <div class="column is-one-third">
       <a v-bind:href="tool.link" target="toolframe" onclick="LandingToggle(true)">
         <div class="add-border box" >
           <figure class="image is-16by9">
