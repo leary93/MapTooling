@@ -9,7 +9,7 @@ var toolList = [
   {id: 7, link: 'https://services.maptm.nl/BM-AMS/', image: 'Images/BM-amsterdam.png', name: 'https://services.maptm.nl/BM-AMS/', text: 'Bereikbaarheidsmeter Amsterdam'},
   {id: 8, link: 'https://socrates.antwerp.maptm.nl/index.html', image: 'Images/STSAntwerpen.png', name: 'https://socrates.antwerp.maptm.nl/index.html', text: 'Socrates Antwerpen'},
   {id: 9, link: 'https://socrates.amsterdam.maptm.nl/', image: 'Images/Socrates-amsterdam.png', name: 'https://socrates.amsterdam.maptm.nl/', text: 'Socrates Amsterdam'},
-  {id: 10, link: 'https://socialtrafficmanagement.nl/koningsdag/', image: '', name: 'https://socialtrafficmanagement.nl/koningsdag/', text: 'P-Fiets Live'}
+  {id: 10, link: 'https://socialtrafficmanagement.nl/koningsdag/', image: 'Images/P-Fiets-live.png', name: 'https://socialtrafficmanagement.nl/koningsdag/', text: 'P-Fiets Live'}
 ];
 
 Vue.component('tool-frame',{
