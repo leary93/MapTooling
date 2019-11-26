@@ -44,7 +44,7 @@
   <div id="NavLand" class="">
     <nav-bar></nav-bar>
   </div>
-  <div class="columns is-centered is-gapless fullheight">
+  <div class="columns is-gapless fullheight">
     <div id="Menubar" class="column is-hidden is-one-fifth add-border">
       <aside class="menu ">
         <div>
@@ -66,7 +66,7 @@
       </div>
     </div>
     <div class="column is-fullwidth scrollbar-warning fullheight maxheight" id="LandingPage">
-      <div id="LandingList" class="columns is-multiline light-padding is-fullwidth ">
+      <div id="LandingList" class="columns is-centered is-multiline light-padding is-fullwidth ">
         <landing-frame v-for="tool in toolList" v-bind:tool="tool" v-bind:key="tool.id"></landing-frame>
       </div>
     </div>

@@ -31,7 +31,7 @@ Vue.component('tool-frame',{
 Vue.component('landing-frame',{
   props: ['tool'],
   template:`
-    <div class="column is-one-third">
+    <div class="column is-one-quarter is-centered">
       <a v-bind:href="tool.link" target="toolframe" onclick="LandingToggle(true)">
         <div class="add-border box" >
           <figure class="image is-16by9">
