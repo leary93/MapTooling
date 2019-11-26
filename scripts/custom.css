@@ -1,6 +1,14 @@
+.has-bg-custom-grey{
+  background-color: #6D767E !important;
+}
+
 body {
   height: 100vh;
   overflow: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .fullheight{
@@ -15,7 +23,7 @@ body {
 }
 
 .add-border{
-  border: 2px solid grey !important;
+  border: 2px solid DimGrey !important;
   border-radius: 2px !important;
 }
 
@@ -57,7 +65,8 @@ body {
 }
 
 .overlay-menu{
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  z-index: 1;
 }

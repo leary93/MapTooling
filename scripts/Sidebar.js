@@ -8,7 +8,8 @@ var toolList = [
   {id: 6, link: 'https://demo.maptm.nl/AIS-Explorer/', image: 'Images/AISexplorer.png', name: 'https://demo.maptm.nl/AIS-Explorer/', text: 'AIS explorer'},
   {id: 7, link: 'https://services.maptm.nl/BM-AMS/', image: 'Images/BM-amsterdam.png', name: 'https://services.maptm.nl/BM-AMS/', text: 'Bereikbaarheidsmeter Amsterdam'},
   {id: 8, link: 'https://socrates.antwerp.maptm.nl/index.html', image: 'Images/STSAntwerpen.png', name: 'https://socrates.antwerp.maptm.nl/index.html', text: 'Socrates Antwerpen'},
-  {id: 9, link: 'https://socrates.amsterdam.maptm.nl/', image: 'Images/Socrates-amsterdam.png', name: 'https://socrates.amsterdam.maptm.nl/', text: 'Socrates Amsterdam'}
+  {id: 9, link: 'https://socrates.amsterdam.maptm.nl/', image: 'Images/Socrates-amsterdam.png', name: 'https://socrates.amsterdam.maptm.nl/', text: 'Socrates Amsterdam'},
+  {id: 10, link: 'https://socialtrafficmanagement.nl/koningsdag/', image: '', name: 'https://socialtrafficmanagement.nl/koningsdag/', text: 'P-Fiets Live'}
 ];
 
 Vue.component('tool-frame',{
@@ -45,9 +46,9 @@ Vue.component('landing-frame',{
 
 Vue.component("nav-bar", {
   template: `
-  <nav class="navbar has-background-grey" role="navigation" aria-label="main navigation">
+  <nav class="navbar has-bg-custom-grey" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <button name="BurgerButton" class="button is-medium has-background-grey is-text light-padding is-hidden" onclick="SidebarToggle(false)">
+      <button name="BurgerButton" class="button is-medium has-bg-custom-grey is-text light-padding is-hidden" onclick="SidebarToggle(false)">
         <span class=""><i class="fas fa-bars"></i></span>
       </button>
       <a class="navbar-item is-white light-padding" href="">
@@ -96,7 +97,7 @@ function SidebarToggle(Close){
       // navMenu.classList.remove('is-hidden');
 
       menuBar.classList.remove('overlay-menu');
-      menuBar.classList.add('is-one-fifth');
+      menuBar.classList.add('is-one-fifth', 'fullheight');
     }
   }
 
@@ -105,7 +106,7 @@ function SidebarToggle(Close){
     // navMenu.classList.add('is-hidden');
 
     menuBar.classList.add('overlay-menu');
-    menuBar.classList.remove('is-one-fifth');
+    menuBar.classList.remove('is-one-fifth', 'fullheight');
   }
 
 }
