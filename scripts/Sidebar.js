@@ -33,10 +33,12 @@ Vue.component('landing-frame',{
   template:`
     <div class="column is-one-quarter is-centered">
       <a v-bind:href="tool.link" target="toolframe" onclick="LandingToggle(true)">
-        <div class="add-border box" >
+        <div class="add-border box is-relative" >
           <figure class="image is-16by9">
             <img v-bind:src="tool.image" v-bind:alt="tool.name"></img>
           </figure>
+          <button class="infobutton button is-transparent"><i class="fas fa-info"></i></button>
+          <button class="videobutton button is-transparent"><i class="fab fa-youtube"></i></button>
           <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless"> {{ tool.text }} </button>
         </div>
       </a>
