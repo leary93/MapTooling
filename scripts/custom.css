@@ -81,16 +81,16 @@ body::-webkit-scrollbar {
 }
 
 .infobutton{
-  position: absolute !important;
+  /* position: absolute !important;
   top: 5px;
-  right: 5px;
+  right: 5px; */
   z-index: 1;
 }
 
 .videobutton{
-  position: absolute !important;
+  /* position: absolute !important;
   top: 5px;
-  left: 5px;
+  left: 5px; */
   z-index: 1;
 }
 

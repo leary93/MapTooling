@@ -21,7 +21,7 @@ Vue.component('tool-frame',{
           <figure class="image is-16by9">
             <img v-bind:src="tool.image" v-bind:alt="tool.name"></img>
           </figure>
-          <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless"> {{ tool.text }} </button>
+          <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless is-paddingless"> {{ tool.text }} </button>
         </div>
       </a>
     </li>
@@ -37,9 +37,17 @@ Vue.component('landing-frame',{
           <figure class="image is-16by9">
             <img v-bind:src="tool.image" v-bind:alt="tool.name"></img>
           </figure>
-          <button class="infobutton button is-transparent"><i class="fas fa-info"></i></button>
-          <button class="videobutton button is-transparent"><i class="fab fa-youtube"></i></button>
-          <button class="button has-text-centered has-text-weight-semibold is-fullwidth is-radiusless"> {{ tool.text }} </button>
+          <div class="field has-addons">
+            <p class="control">
+              <button class="videobutton button is-transparent"><i class="fab fa-youtube"></i></button>
+            </p>
+            <p class="control is-expanded">
+              <button class="is-fullwidth button has-text-centered has-text-weight-semibold is-radiusless is-paddingless"> {{ tool.text }} </button>
+            </p>
+            <p class="control">
+              <button class="infobutton button is-transparent"><i class="fas fa-info"></i></button>
+            </p>
+          </div>
         </div>
       </a>
     </div>
