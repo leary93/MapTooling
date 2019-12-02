@@ -6,7 +6,7 @@ var toolList = [
   {id: 4, link: 'https://comol5.maptm.nl/modules/login/login.html', image: 'Images/comol5.png', name: 'https://comol5.maptm.nl/modules/login/login.html', text: 'COMOL5'},
   {id: 5, link: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', image: 'Images/Kiemenspeurder.png', name: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', text: 'Kiemenspeurder'},
   {id: 6, link: 'https://demo.maptm.nl/AIS-Explorer/', image: 'Images/AISexplorer.png', name: 'https://demo.maptm.nl/AIS-Explorer/', text: 'AIS explorer'},
-  {id: 7, link: 'https://services.maptm.nl/BM-AMS/', image: 'Images/BM-amsterdam.png', name: 'https://services.maptm.nl/BM-AMS/', text: 'Bereikbaarheidsmeter Amsterdam'},
+  {id: 7, link: 'https://bmams.maptm.nl/', image: 'Images/BM-amsterdam.png', name: 'https://bmams.maptm.nl/', text: 'Bereikbaarheidsmeter Amsterdam'},
   {id: 8, link: 'https://socrates.antwerp.maptm.nl/index.html', image: 'Images/STSAntwerpen.png', name: 'https://socrates.antwerp.maptm.nl/index.html', text: 'Socrates Antwerpen'},
   {id: 9, link: 'https://socrates.amsterdam.maptm.nl/', image: 'Images/Socrates-amsterdam.png', name: 'https://socrates.amsterdam.maptm.nl/', text: 'Socrates Amsterdam'},
   {id: 10, link: 'https://socialtrafficmanagement.nl/koningsdag/', image: 'Images/P-Fiets-live.png', name: 'https://socialtrafficmanagement.nl/koningsdag/', text: 'P-Fiets Live'}
