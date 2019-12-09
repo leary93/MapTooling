@@ -13,7 +13,6 @@ var toolList = [
 ];
 
 Vue.component('tool-frame',{
-  props: ['tool'],
   template:`
     <li>
       <a v-bind:href="tool.link" target="toolframe" onclick="SidebarToggle(true)">
@@ -25,11 +24,11 @@ Vue.component('tool-frame',{
         </div>
       </a>
     </li>
-    `
+    `,
+    props: ['tool']
 })
 
 Vue.component('landing-frame',{
-  props: ['tool'],
   template:`
     <div class="column is-one-quarter is-centered">
       <a v-bind:href="tool.link" target="toolframe" onclick="LandingToggle(true)">
@@ -51,7 +50,8 @@ Vue.component('landing-frame',{
         </div>
       </a>
     </div>
-    `
+    `,
+    props: ['tool']
 })
 
 Vue.component("nav-bar", {
@@ -61,7 +61,7 @@ Vue.component("nav-bar", {
       <button name="BurgerButton" class="button is-medium has-bg-custom-grey is-text light-padding is-hidden" onclick="SidebarToggle(false)">
         <span class=""><i class="fas fa-bars"></i></span>
       </button>
-      <a class="navbar-item is-white light-padding" href="">
+      <a name="MapLogo" class="navbar-item is-white light-padding" href="">
         <img src="Images/logo_map.svg">
       </a>
     </div>
@@ -74,6 +74,37 @@ Vue.component("nav-bar", {
   `
 })
 
+Vue.component("side-bar")
+
+var sideBar = new Vue({
+  el: '#Side',
+  template: `
+  <div id="Menubar" class="column is-hidden is-one-fifth add-border" @mouseover="open" @mouseleave="close">
+    <aside class="menu" style="height: inherit, width: inherit">
+      <div>
+        <div id="NavBar">
+          <nav-bar></nav-bar>
+        </div>
+        <div id="Menulist" class="menu-content scrollbar-warning">
+          <ul class="menu-list">
+            <tool-frame v-for="tool in toolList" v-bind:tool="tool" v-bind:key="tool.id"></tool-frame>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+  `,
+  methods:{
+    open: function(){
+      SidebarToggle(false);
+    },
+    close: function(){
+      SidebarToggle(true);
+    }
+  },
+  data: {toolList}
+})
+
 var menuNav = new Vue({
   el: "#NavBar"
 })
@@ -83,40 +114,37 @@ var landNav = new Vue({
 })
 
 var tools = new Vue({
-  el: '#LandingList',
-  data: {toolList}
+  data: {toolList},
+  el: '#LandingList'
 })
 
 var toolMenu = new Vue({
-  el: '#Menulist',
-  data: {toolList}
+  el: '#Menulist'
 })
+
+
 
 function SidebarToggle(Close){
   // Function to close and open the sidebar
   menuList = document.getElementById("Menulist");
   menuBar = document.getElementById("Menubar");
+  mapLogo = document.getElementsByName("MapLogo");
 
   if(!Close){
-    hidden = menuList.classList.contains('is-hidden');
-    if (!hidden){
-      Close = true;
-    }
-    else{
-      menuList.classList.remove('is-hidden');
-      // navMenu.classList.remove('is-hidden');
-
-      menuBar.classList.remove('overlay-menu');
-      menuBar.classList.add('is-one-fifth', 'fullheight');
-    }
+    menuList.classList.remove('is-hidden');
+    menuBar.classList.remove('is-collapsed', 'has-bg-custom-grey');
+    menuBar.classList.add('is-one-fifth');
+    mapLogo.forEach(function(obj){
+      obj.classList.remove("is-hidden");
+    });
   }
-
-  if(Close){
+  else if(Close){
     menuList.classList.add('is-hidden');
-    // navMenu.classList.add('is-hidden');
-
-    menuBar.classList.add('overlay-menu');
-    menuBar.classList.remove('is-one-fifth', 'fullheight');
+    menuBar.classList.add('is-collapsed', 'has-bg-custom-grey');
+    menuBar.classList.remove('is-one-fifth');
+    mapLogo.forEach(function(obj){
+      obj.classList.add("is-hidden");
+    });
   }
 
 }
