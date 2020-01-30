@@ -11,7 +11,7 @@ Vue.component("nav-bar", {
     </div>
     <div name="navMenu" class="navbar-menu">
       <div class="navbar-start">
-          <h3 class="navbar-item is-white has-text-black"><b>Tooling</b></h3>
+          <h3 class="navbar-item is-white has-text-black"><b>Toolbox</b></h3>
       </div>
     </div>
   </nav>
