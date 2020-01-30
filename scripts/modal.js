@@ -44,18 +44,18 @@ Vue.component('info-modal',{
         <button @click="close" class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <p class="">Gemaakt door: {{author}}</p>
-        <p class="">Gemaakt met: {{taal}}</p>
-        <p class=""> {{usage}} </p>
+        <p class=""> <b>Gemaakt door:</b> {{info.author}}</p>
+        <hr>
+        <p class=""> <b>Functie: </b> {{info.usage}} </p>
       </section>
+      <footer class="modal-card-foot">
+      </footer>
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
   </div>`,
   props: {
     title: null,
-    author: null,
-    taal: null,
-    usage: null
+    info: Object
   },
   data: function(){
     return {
@@ -132,12 +132,9 @@ function openInfo(title, info){
 
     var modal = {
       title: title,
-      author: info['author'],
-      taal: info['taal'],
-      usage: info['usage']
+      info: info
     };
 
-    console.log(modal);
     infoModals.push(modal);
   };
 
