@@ -41,6 +41,12 @@
 </head>
 
 <body>
+  <div id="videoList">
+    <video-modal v-for="modal in videoModals" :key="modal.title" :title="modal.title" :link="modal.link"></video-modal>
+  </div>
+  <div id="infoList">
+    <info-modal v-for="modal in infoModals" :key="modal.title" :title="modal.title"></info-modal>
+  </div>
   <div id="NavLand" class="">
     <nav-bar></nav-bar>
   </div>
@@ -50,7 +56,7 @@
     </div>
     <div class="column is-hidden" id="IframeColumn">
       <div class="iframe-container fullheight">
-        <iframe src="https://maptm.nl" class="scrollbar-warning" name="toolframe" allowfullscreen>
+        <iframe class="scrollbar-warning" name="toolframe" allowfullscreen>
         </iframe>
       </div>
     </div>
@@ -62,6 +68,37 @@
   </div>
 
 </body>
+
+<script>
+var toolList = [
+  {id: 0, link: 'https://tv.maptm.nl/', image: 'Images/trafficviewer.png', name: 'https://tv.maptm.nl/', text: 'MAPtm traffic viewer',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 1, link: 'https://timviewer-demo.maptm.nl', image: 'Images/TIMviewer.png', name: 'https://timviewer-demo.maptm.nl', text: 'TIMviewer',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  // {id: 2, link: 'https://timapp-demo.maptm.nl', image: 'Images/TIMapp.png', name: 'https://timapp-demo.maptm.nl', text: 'TIMapp'},
+  {id: 3, link: 'https://services.maptm.nl/UtrechtHB/', image: 'Images/UtrechtHB.png', name: 'https://services.maptm.nl/UtrechtHB/', text: 'Utrecht HB tool',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 4, link: 'https://comol5.maptm.nl/modules/login/login.html', image: 'Images/comol5.png', name: 'https://comol5.maptm.nl/modules/login/login.html', text: 'COMOL5',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 5, link: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', image: 'Images/Kiemenspeurder.png', name: 'http://mapinsight-kiemenspeurder-demo.s3-website.eu-central-1.amazonaws.com/', text: 'Kiemenspeurder',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 6, link: 'https://demo.maptm.nl/AIS-Explorer/', image: 'Images/AISexplorer.png', name: 'https://demo.maptm.nl/AIS-Explorer/', text: 'AIS explorer',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 7, link: 'https://bmams.maptm.nl/', image: 'Images/BM-amsterdam.png', name: 'https://bmams.maptm.nl/', text: 'Bereikbaarheidsmeter Amsterdam',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 8, link: 'https://ontfant.maptm.nl/monitoring.html', image: 'Images/STSAntwerpen.png', name: 'https://socrates.antwerp.maptm.nl/index.html', text: 'Socrates Antwerpen',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 9, link: 'https://socrates.amsterdam.maptm.nl/', image: 'Images/Socrates-amsterdam.png', name: 'https://socrates.amsterdam.maptm.nl/', text: 'Socrates Amsterdam',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}},
+  {id: 10, link: 'https://socialtrafficmanagement.nl/koningsdag/', image: 'Images/P-Fiets-live.png', name: 'https://socialtrafficmanagement.nl/koningsdag/', text: 'P-Fiets Live',
+  info: {author: 'Piet', taal: 'Html, css, javascript', usage: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}}
+];
+
+</script>
+
 <!-- Here we run post-html scripts -->
 <script src="modules/global/vue.js"></script>
+<script src="scripts/navbar.js"></script>
+<script src="scripts/modal.js"></script>
+<script src="scripts/landingframe.js"></script>
 <script src="scripts/Sidebar.js"></script>
